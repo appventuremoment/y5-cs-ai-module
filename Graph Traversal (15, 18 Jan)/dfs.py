@@ -4,19 +4,21 @@ def bfs(graph,node):
     # graph is the graph in dictionary format
     visited=[]
     queue=[]
+    out = []
     
     queue.append(node)
     visited.append(node)
     
     while queue:
         s=queue.pop()
-        print(s)
+        out.append(s)
         for x in graph[s][::-1]:
             if x not in visited:
                 visited.append(x)
                 queue.append(x)
-
-    return visited
+            
+    print(out)
+    
 
 graph={
     'A':['B','C'],
@@ -26,6 +28,7 @@ graph={
     'E':['F'],
     'F':[]
 }
-print(bfs(graph, 'A'))
+bfs(graph,'A')
+# this will return the sequence of A,B,D,E,F,C
 
-#im pretty sure this is bfs
+#https://medium.com/nerd-for-tech/graph-traversal-in-python-depth-first-search-dfs-ce791f48af5b
