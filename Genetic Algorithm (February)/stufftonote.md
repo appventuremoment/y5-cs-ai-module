@@ -6,7 +6,7 @@ Roulette makes weights based on fitness
 
 Tournament: Have you ever watched VCT?
 
-!(nicetry)[link where]
+!(nicetry)[https://github.com/appventuremoment/y5-cs-ai-module/blob/main/Genetic%20Algorithm%20(February)/image.png]
 
 
 
