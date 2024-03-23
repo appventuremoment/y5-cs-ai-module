@@ -43,16 +43,23 @@ Solving underfitting is the inverse of the above, plus adding better features (i
 - K-Means Clustering: Cluster data into K groups by choosing centres and finding the K nearest points to be in the same class
 
 Do I even need this
+
 ![nice try](image2.png)
 
 Sigmoid function for logistic regression
+
 ![nice try](image3.png)
+
 Logistic function
+
 ![nice try](image4.png)
+
 Logit/Log-odds function (Inverse of the logistic function) 
+
 ![nice try](image5.png)
 
 K-means clustering idea
+
 ![nice try](image7.png)
 
 Distance functions, where x and y are vectors with k-1 dimensions
