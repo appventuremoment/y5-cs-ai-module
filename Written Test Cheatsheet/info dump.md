@@ -7,8 +7,8 @@
 something something numerical discrete, continuous data and categorical, ordinal data. Recall from last semester.
 
 - Supervised learning is using labelled data to predict 
-    - Subclass: Reinforcement learning is using unlabelled data and trial of error, then improve its performance from the results of each trial
 - Unsupervised learning is unlabelled data in order to find patterns
+    - Subclass: Reinforcement learning is using unlabelled data and trial of error, then improve its performance from the results of each trial
 
 - Sampling Bias: Non-representitive training data
 - No Free Lunch Theorem: There is no one size fits all model
@@ -41,7 +41,7 @@ Solving underfitting is the inverse of the above, plus adding better features (i
 - Logistic Regression: Using 2 numerical variables and a logistic function, use logisitic function to separate graph into 2 parts. Classify points based on part.
 - Decisions Tree: Literally a flow chart of yes or no questions, searches for most important feature when splitting node (so defining characterisitics to ask as a yes/no question)
 - Random Forest: Several decision trees that each randomly choose subset of features and find the best features in said subset instead of most important feature overall when splitting node, then verdict of all the trees are summed and the one with the majority votes wins
-- SVM: Supervised BINARY classification, for each dimension (both axis are independ ant variables), a best hyperplane line is drawn which maximises the distance to the closest distance in each class
+- SVM: Supervised BINARY classification, for each dimension (both axis are independant variables), a best hyperplane line is drawn which maximises the distance to the closest distance in each class
 - Naive Bayes: I am betting that this is not coming out, requires knowledge of Bayesian statistics
 - kNN: Both takes K nearest neighbours of the point. Classification returns class that is in largest quantities in its k-nearest and k must not be a multiple of the classes and odd to prevent ties (usually sqrt of number of classes when number of classes is large), regression returns average of values of k-nearest
 - K-Means Clustering: Cluster data into K groups by choosing centres and finding the K nearest points to be in the same class
@@ -65,11 +65,11 @@ Solving underfitting is the inverse of the above, plus adding better features (i
 ### K-means clustering idea
 
 ![nice try](image7.png)
+To find the best K, plot graph of within cluster sum of squares distances to k and find the point which it plateaus
 
 ### Distance functions
 where x and y are vectors with k - 1 dimensions
 ![nice try](image6.png)
-To find the best K, plot graph of within cluster sum of squares to k and find the point which it plateaus
 
 ### Types of ML Algorithms
 - Dimensionality Reduction: Reducing random variables being considered, divided into feature selection and feature extraction. PCA is basically just drawing a hyperplane line in each dimension and splitting it based on that in a lower dimension. Image for reference:
@@ -100,6 +100,7 @@ This cannot be mitigated by changing the activation function to a sigmoid or oth
 Backpropagation uses a sigmoid function. (1/(1+e^-x)). Therefore, it can never reach 0 or 1.
 
 How it works:
+
 ![nice try](image16.png)
 
 To optimise backpropagation to be faster, we can:
@@ -141,7 +142,6 @@ A transition model carries out the action and the action is the change that is d
 
 - Environment: Setting for search problem
 - Agent: Entity that interacts with the environment
-- 
 
 ### BFS Code
 ```py
@@ -191,7 +191,7 @@ Generational population model replaces all parents.
 
 ## Selection Methods
 - Roulette Wheel: Each chromosome has a weighted chance to be chosen as a parent based on its fitness as compared to the fitness sum of the population. Select one parent based on the chances
-- Stochastic Universal Sampling: Roulette Wheel but for both parents at the same time
+- Stochastic Universal Sampling: Roulette Wheel but choose both parents at the same time
 - K-way Tournament: Choose K random chromosomes from the population and out of those chosen, pick the best one to be parent
 - Rank: Only for population with chromosomes with close fitness, the chromosomes are sorted by rank and uses the rank as the weighted chance to be selected as parent
 
