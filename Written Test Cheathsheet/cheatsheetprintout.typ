@@ -1,5 +1,5 @@
-#set page(columns: 2)
-#set text(size:6pt)
+#set page(columns: 3)
+#set text(size:8pt)
 #show heading.where(
   level: 3
 ): it => text(
@@ -36,7 +36,7 @@ Bias is when it is systematically incorrect for certain data points.
 Variance is fluctuation in output when different inputs, essentially the flexibility.
 - Balance of Precision and Recall, F1 Score = 2 \* (Precision \* Recall) / (Precision + Recall)
 - AUC-ROC = Area under curve of TP rate against FP rate
-#image("image.png", width: 50%)
+#image("image.png", width: 75%)
 
 === To solve over/underfitting
 

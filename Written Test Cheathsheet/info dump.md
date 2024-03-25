@@ -84,7 +84,7 @@ To find the best K, plot graph of within cluster sum of squares to k and find th
 It uses a step activation function
 ![nice try](image9.png)
 
-### How to Train Your Perceptron Neuron
+How to Train Your Perceptron Neuron
 ![nice try](image10.png)
 ![nice try](image11.png)
 
@@ -99,9 +99,46 @@ This cannot be mitigated by changing the activation function to a sigmoid or oth
 ### Backpropagation
 Backpropagation uses a sigmoid function. (1/(1+e^-x)). Therefore, it can never reach 0 or 1.
 
-Since the algorithm (gradient descent) for backpropagation is a little bit more complicated than the perceptron neuron, I will also be betting on this not being tested.
+How it works:
+![nice try](image16.png)
 
 To optimise backpropagation to be faster, we can:
 1. Use the previous change in weight of the neuron * some constant x in the change in weight of neuron formula such that it avoids local minima
 2. Use hyperbolic tangent function 2a/(1+e^-bx) - a where a,b are constants
 3. Increase the learning rate
+
+ReLu Activation Function    
+![nice try](image19.png)
+
+## Chapter 2: Convolutional Neural Networks
+
+For convolutional layers, they are superimposed onto the original image and multiplied for each corresnponding pixel. Then it is summed up and forms the top left pixel.
+
+![nice try](image14.png)
+
+Unlike the above image, pooling does not use overlap in inputs. Refer to below image input matrix and output matrix shape for clarity.
+
+![nice try](image15.png)
+
+Honestly I don't know what else to write for this.
+
+## Chapter 2: Generative Models
+Transformers tokenise their inputs multiple times through a token network like how you would run things through a neural network
+
+Attention is basically the query, key and value vectors calculated from each token of the input. If the query is met the key value is larger. We then find similarity by multiplying the query times the key value. The attention would be softmax applied to the similarity.
+
+![nice try](image17.png)
+
+We calculate value as the sum of the product of attention and value vector of each token.
+
+#### Pictorial Representation
+
+![nice try](image18.png)
+
+## Chapter 3
+
+A transition model carries out the action and the action is the change that is done. So if you move a knight piece in chess, then the hand or the player would be the transition model.
+
+Stopped at page 4 of C3
+
+Look through slides afterwards before writing the paper
