@@ -1,4 +1,4 @@
-# This is simply a reference for important things to note down when writing the cheat sheet
+# This is simply a reference for important things to note down when writing the cheat sheet. It is not exhaustive of all the information tested.
 
 ## Chapter 1
 - Turing test: Human asks a machine and a human questions. Based only from the responses, determine which is the AI and which is the human. If the human is unable to distinguish or chooses wrongly, the machine passes the turing test
@@ -135,10 +135,76 @@ We calculate value as the sum of the product of attention and value vector of ea
 
 ![nice try](image18.png)
 
-## Chapter 3
-
+## Chapter 3: Search Problems
+### Terminology
 A transition model carries out the action and the action is the change that is done. So if you move a knight piece in chess, then the hand or the player would be the transition model.
 
-Stopped at page 4 of C3
+- Environment: Setting for search problem
+- Agent: Entity that interacts with the environment
+- 
 
-Look through slides afterwards before writing the paper
+### BFS Code
+```py
+def bfs(graph, start):
+    frontier = [start]
+    visited = []
+
+    while frontier:
+        # replace 0 with nothing for dfs
+        currnode = frontier.pop(0) 
+        visited.append(currnode)
+        for child in graph[currnode]:
+            if child not in visited and child not in frontier:
+                frontier.append(child)
+
+    return visited
+```
+
+BFS will always terminate with the best solution but is computationally expensive and chronically long. DFS is reverse (might get stuck in infinite loop)
+
+For A*, the estimated cost for any node is the shortest path cost from the start node to the node plus the estimated distance (using the distance functions) to the goal node.
+
+![nice try](image20.png)
+
+## Chapter 4: Genetic Algorithms
+Steady state population model is 1-2 offspring is generated each iteration to replace 2 parents from the population.
+
+Generational population model replaces all parents.
+### Terminology
+
+- Population: All possible solutions
+- Chromosomes: A particular set of solution
+- Gene: 1 element position of a chromosome
+- Allele: Value a gene takes for a particular chromosome
+- Genotype: Solutions represented in a way for machines to understand easily
+- Phenotype: Solutions represented in the real world situation 
+- Encoding/Decoding: Phenotype to Genotype/Genotype to Phenotype
+- Fitness function: Evaluates how well the solution works to solve the problem
+- Genetic operators: Alters genetic composition of offspring (crossover, mutation, selection)
+- Crossover: Method of merging genetic information of 2 individuals
+- Mutation: Random deformation or change in the chromosomes
+- Selection: Mechanism to choose parents to produce offspring using the fitness function
+- Elitism: Take the best individuals without applying any genetic operators and sending them directly to the next generation
+
+## Cycle of Genetic Algorithms
+![nice try](image21.png)
+
+## Selection Methods
+- Roulette Wheel: Each chromosome has a weighted chance to be chosen as a parent based on its fitness as compared to the fitness sum of the population. Select one parent based on the chances
+- Stochastic Universal Sampling: Roulette Wheel but for both parents at the same time
+- K-way Tournament: Choose K random chromosomes from the population and out of those chosen, pick the best one to be parent
+- Rank: Only for population with chromosomes with close fitness, the chromosomes are sorted by rank and uses the rank as the weighted chance to be selected as parent
+
+## Crossover Methods
+- N-point crossover: Chooses N points to split both parents and alternate each section as the child
+- Uniform crossover: Every allele of each parent has a chance (weighted or not) to be chosen as offspring allele
+
+## Mutation Operators
+- Bitflip: Not.
+- Swap: Swap allele of 2 random positions in child
+- Scramble: Subset of genes are scarambled
+- Inversion: Subset of genes are reversed in order
+
+## Selection Operators (Steady state populations only)
+- Age based selection: Oldest is removed to be replaced by new offspring
+- Fitness based selection: I am sure you can figure this one out
